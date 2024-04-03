@@ -1,0 +1,222 @@
+* {
+
+    font-family: "Nunito", sans-serif;
+    font-optical-sizing: auto;
+    font-weight: 400;
+    font-style: normal;
+    margin: 0;
+}
+
+body {
+
+    background:  linear-gradient(90deg, #f34 0%, #623 33.33%, #ddd 33.33%, #888 66.66%, #5fa 66.66%, #5f7 100%);
+    background-size: 300% 66%;
+    background-position:  50% 0;
+    position: relative;
+    width: 100%;
+}
+
+.header {
+
+    background-color: #0003;
+    padding: 10px;
+}
+
+.title {
+
+    font-weight: 800;
+    font-size: 50px;
+    text-align: center;
+    margin: 0;
+}
+
+.score-container {
+
+    display: flex;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+}
+
+.score-container > li > p {
+
+    padding-bottom: 10px;
+}
+
+.score-container > li > b {
+
+    display: block;
+    text-align: center;
+}
+
+.flex-container {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    padding: 50px;
+}
+
+.grid-container {
+
+    display: grid;
+    grid-template-columns: repeat(3, 15vw);
+    grid-template-rows: repeat(3, 15vw);
+    grid-gap: 1px;
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.grid-item {
+
+    background-color: #0001;
+}
+
+.grid-item > img {
+
+    width: 100%;
+    height: 100%;
+    padding: 5px;
+    animation: appear 1s 1 forwards;
+}
+
+.retry {
+
+    width: 80%;
+    margin: 5px 10%;
+    border: none;
+    border-radius: 10px;
+    background-color: #68f6;
+    transition: all 0.3s ease-in;
+}
+
+.retry:hover {
+
+    animation: buttonHover 2s infinite;
+    box-shadow: 0 0 5px 1px #000;
+}
+
+.footer {
+
+    background-color: #0003;
+    padding: 20px;
+}
+
+.footer > ul {
+
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-around;
+    list-style: none;
+    padding: 0;
+}
+
+.footer > ul > li {
+
+    margin: 10px;
+}
+
+.footer > ul > li > a {
+
+    color: #24d8;
+    text-decoration: none;
+    transition: all 0.3s ease-in;
+}
+
+.footer > ul > li > a:hover {
+
+    color: #24d;
+    filter: drop-shadow(0 0 1px #000);
+}
+
+.footer > ul > li > a > i {
+
+    display: block;
+    text-align: center;
+}
+
+@keyframes appear {
+
+    0% {
+
+        opacity: 0;
+    }
+    100% {
+
+        opacity: 0.8;
+    }
+}
+
+@keyframes buttonHover {
+
+    0% {
+
+        background-color: #68f6;
+    } 50% {
+
+        background-color: #68ff;
+    } 100% {
+
+        background-color: #68f6;
+    }
+}
+
+@keyframes drawToLosing {
+
+    0% {
+
+        background-position: 50% 0;
+    }
+    100% {
+
+        background-position: 0 0;
+    }
+}
+
+@keyframes drawToWining {
+
+    0% {
+
+        background-position: 50% 0;
+    }
+    100% {
+
+        background-position: 100% 0;
+    }
+}
+
+@keyframes draw {
+
+    0% {
+
+        background-position: var(--current-pos);
+    }
+    100% {
+
+        background-position: 50% 0;
+    }
+}
+
+@media screen and (min-width: 520px) {
+
+    .grid-container {
+
+        grid-template-columns: repeat(3, 20vh);
+        grid-template-rows: repeat(3, 20vh);
+    }
+}
+
+@media screen and (min-width: 1500px) {
+
+    * {
+
+        font-size: 50px;
+    }
+
+    .title {
+
+        font-size: 100px;
+    }
+}
